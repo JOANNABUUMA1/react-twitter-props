@@ -37,8 +37,8 @@ function App() {
         const query = e.target.value
         if (query.length > 0) {
             e.preventDefault()
-            let filteredtweets = tweets.filter(tweet => tweet.content.includes(query))
-            setTweets(filteredtweets)
+            let filteredTweets = tweets.filter(tweet => tweet.content.includes(query))
+            setTweets(filteredTweets)
         } else {
             setTweets(initialTweets)
         }
@@ -49,7 +49,7 @@ function App() {
             
             <LeftSidebar loggedInUser={loggedInUser}/>
 
-            <Main loggedInUser={loggedInUser} tweets={tweets} addTweet={addTweet} createTweetContent={createTweetContent} setCreateTweetContent={setCreateTweetContent} onSearch={handleSearch}/>
+            <Main loggedInUser={loggedInUser} tweets={tweets} addTweet={addTweet} createTweetContent={createTweetContent} setCreateTweetContent={setCreateTweetContent}/>
             <RightSidebar onSearch={handleSearch}/>
         </div>
     )

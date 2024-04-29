@@ -1,7 +1,7 @@
 import CreateTweetForm from "./CreateTweetForm"
 import Timeline from "./Timeline"
 
-function Main({ loggedInUser, tweets, addTweet, createTweetContent, setCreateTweetContent, onSearch }) {
+function Main({ loggedInUser, tweets, addTweet, createTweetContent, setCreateTweetContent}) {
     return <main>
         <div className='top-bar'>
             <h2 className="title">Home</h2>
