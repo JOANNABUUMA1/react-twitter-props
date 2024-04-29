@@ -33,13 +33,24 @@ function App() {
         ])
     }
 
+    const handleSearch = (e) => {
+        const query = e.target.value
+        if (query.length > 0) {
+            e.preventDefault()
+            let filteredtweets = tweets.filter(tweet => tweet.content.includes(query))
+            setTweets(filteredtweets)
+        } else {
+            setTweets(initialTweets)
+        }
+    }
+
     return (
         <div className="container">
             
             <LeftSidebar loggedInUser={loggedInUser}/>
 
-            <Main loggedInUser={loggedInUser} tweets={tweets} addTweet={addTweet} createTweetContent={createTweetContent}/>
-            <RightSidebar/>
+            <Main loggedInUser={loggedInUser} tweets={tweets} addTweet={addTweet} createTweetContent={createTweetContent} setCreateTweetContent={setCreateTweetContent} onSearch={handleSearch}/>
+            <RightSidebar onSearch={handleSearch}/>
         </div>
     )
 }
